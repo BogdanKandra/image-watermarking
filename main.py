@@ -23,7 +23,7 @@ def lsb_test():
     # Take the watermark text
     wmText = 'Criptografie'
     # Take the host image
-    imagePath = 'images/lena.tiff'
+    imagePath = 'inputs/images/lena.tiff'
     hostImage = cv2.imread(imagePath)
     # Compute the host image's size
     imageH, imageW = hostImage.shape[:2]
@@ -43,12 +43,12 @@ def lsb_test():
     cv2.imshow('Watermarked', wmImage)
     
 #    # Save the watermarked image
-#    saved = cv2.imwrite('images/outputs/resultLSB.png', wmImage)
+#    saved = cv2.imwrite('outputs/images/resultLSB.png', wmImage)
 #    if saved == False:
 #        print("Eroare la scrierea imaginii watermarked!")
 #    
 #    # Save the difference image
-#    saved = cv2.imwrite('images/outputs/diffLSB.png', diff)
+#    saved = cv2.imwrite('outputs/images/diffLSB.png', diff)
 #    if saved == False:
 #        print("Eroare la scrierea imaginii diferenta!")
     
@@ -68,8 +68,8 @@ def visible_image_test():
     Returns:
         Nothing
     """
-    wmImagePath = 'images/fmicrypto.png'
-    hostImagePath = 'images/lena.tiff'
+    wmImagePath = 'inputs/images/fmicrypto.png'
+    hostImagePath = 'inputs/images/lena.tiff'
     
     # Set the flag in order not to lose the Alpha Channel
     wmImage = cv2.imread(wmImagePath, cv2.IMREAD_UNCHANGED)
@@ -84,7 +84,7 @@ def visible_image_test():
     cv2.imshow('Watermarked', output)
     
 #    # Save the watermarked image
-#    saved = cv2.imwrite('images/outputs/resultVisible.png',output)
+#    saved = cv2.imwrite('outputs/images/resultVisible.png',output)
 #    if saved == False:
 #        print("Eroare la scrierea imaginii watermarked!")
     
@@ -100,8 +100,8 @@ def visible_video_test():
     Returns:
         Nothing
     """
-    wmImagePath = 'images/fmicrypto.png'
-    videoPath = 'videos/big_buck_bunny.mp4'
+    wmImagePath = 'inputs/images/fmicrypto.png'
+    videoPath = 'inputs/videos/big_buck_bunny.mp4'
 
     # Set the flag in order not to lose the Alpha Channel
     wmImage = cv2.imread(wmImagePath, cv2.IMREAD_UNCHANGED)
@@ -113,7 +113,7 @@ def visible_video_test():
     # Define the VideoWriter object and parameterize it
     # MJPG codec and .avi extension needed for color video
     fourcc = cv2.VideoWriter_fourcc('M', 'J', 'P', 'G')
-    result = cv2.VideoWriter('videos/resultVideo.avi', fourcc, 25, (1280, 720))    
+    result = cv2.VideoWriter('outputs/videos/resultVideo.avi', fourcc, 25, (1280, 720))    
     
     while stream.isOpened():
         success, frame = stream.read()  # Read a frame
@@ -139,8 +139,8 @@ def fft_test():
     Returns:
         Nothing
     """
-    wmImagePath = 'images/obama2.jpg'
-    hostImagePath = 'images/Trump.jpg'
+    wmImagePath = 'inputs/images/obama2.jpg'
+    hostImagePath = 'inputs/images/Trump.jpg'
     alphaFactor = 0.01
 
     # Read the watermark and the host images
@@ -179,12 +179,12 @@ def fft_test():
     cv2.destroyAllWindows()
 
 #    # Save the watermarked image
-#    saved = cv2.imwrite('images/outputs/resultFFT.png', resultImage)
+#    saved = cv2.imwrite('outputs/images/resultFFT.png', resultImage)
 #    if saved == False:
 #        print("Eroare la scrierea imaginii watermarked!")
 #
 #    # Save the differences image
-#    saved = cv2.imwrite('images/outputs/diffFFT.png', diff)
+#    saved = cv2.imwrite('outputs/images/diffFFT.png', diff)
 #    if saved == False:
 #        print("Eroare la scrierea imaginii diferenta!")
 
@@ -207,8 +207,8 @@ def dwt_test():
     Returns:
         Nothing
     """
-    wmImagePath = 'images/obama.jpg'
-    hostImagePath = 'images/lena.tiff'
+    wmImagePath = 'inputs/images/obama.jpg'
+    hostImagePath = 'inputs/images/lena.tiff'
     alphaFactor = 0.99
     betaFactor = 0.009
 
