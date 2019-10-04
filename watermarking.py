@@ -175,7 +175,7 @@ def visible_watermark1(wmImage, hostImage):
     alpha = np.ones((imageH, imageW), dtype='uint8') * 255
     hostImage = np.dstack((hostImage, alpha))
     
-    # Build an overlay of the same saze as the host image
+    # Build an overlay of the same size as the host image
     overlay = np.zeros((imageH, imageW, 4), dtype='uint8')
     
     # Add the watermark image to the overlay in the bottom-right corner
