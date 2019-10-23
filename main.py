@@ -59,38 +59,6 @@ def lsb_test():
     cv2.waitKey()
     cv2.destroyAllWindows()
     
-def visible_image_test():
-    """Runs a test for the visible watermarking technique over an image.
-
-    Arguments:
-        None
-
-    Returns:
-        Nothing
-    """
-    wmImagePath = 'inputs/images/fmicrypto.png'
-    hostImagePath = 'inputs/images/lena.tiff'
-    
-    # Set the flag in order not to lose the Alpha Channel
-    wmImage = cv2.imread(wmImagePath, cv2.IMREAD_UNCHANGED)
-    
-    # Read the host image
-    hostImage = cv2.imread(hostImagePath)
-
-    # Call the watermarking function
-    output = wm.visible_watermark2(wmImage, hostImage)
-
-    cv2.imshow('Initiala', hostImage)
-    cv2.imshow('Watermarked', output)
-    
-#    # Save the watermarked image
-#    saved = cv2.imwrite('outputs/images/resultVisible.png',output)
-#    if saved == False:
-#        print("Eroare la scrierea imaginii watermarked!")
-    
-    cv2.waitKey()
-    cv2.destroyAllWindows()
-
 def visible_video_test():
     """ Runs a test for the visible watermarking technique over a video.
     
@@ -247,7 +215,6 @@ def dwt_test():
     cv2.destroyAllWindows()
 
 #lsb_test()
-#visible_image_test()
 #visible_video_test()
 #fft_test()
-dwt_test()
+#dwt_test()
